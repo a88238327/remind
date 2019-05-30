@@ -82,7 +82,6 @@ public class selectdata{
         }
         return false;
     }
-
     public static boolean jiazhaonianshen(String defaultStartDate, String defaultEndDate) {
         String sql="select openid,准驾车型,有效期至,姓名,初次领证日期 from driving_licence,customer where phone=USER_FORM_INFO_FLAG_MOBILE and 有效期至 between '"+defaultStartDate+"' and '"+defaultEndDate+"' and phone in (select phone from remind where remmind_content='驾照年审提醒' and stauts='true')";
         rs= baseDao.ExecuteQuery(sql);

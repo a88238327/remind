@@ -12,11 +12,11 @@ public class RemindApplicationTests {
 
     @Test
     public void contextLoads() {
-
-        selectdata.jiazhaonianshen("2000/07/15","2030/05/22");
-        selectdata.cheliangnianshen("2000/07","2050/05");
-        selectdata.jiaoqiangxian("2000-07-15","2030-05-22");
-        selectdata.shangyexian("2000-07-15","2030-05-22");
+//
+//        selectdata.jiazhaonianshen("2000/07/15","2030/05/22");
+//        selectdata.cheliangnianshen("2000/07","2050/05");
+//        selectdata.jiaoqiangxian("2000-07-15","2030-05-22");
+//        selectdata.shangyexian("2000-07-15","2030-05-22");
 
     }
 
