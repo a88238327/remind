@@ -20,7 +20,7 @@ public class reminddemo {
                 "		}\r\n" +
                 "	}\r\n" +
                 "}";
-        System.out.println(str);
+//        System.out.println(str);
         String url="https://cloud.hnjtbf.com/CustomerLogin/userlogin?go=mianfeinianshen";
         str=str.replace("OPENID", openid);
         str=str.replace("FIRST", "尊敬的車家网会员您好，您的爱车年审即将到期!");
@@ -52,12 +52,12 @@ public class reminddemo {
                 "		}\r\n" +
                 "	}\r\n" +
                 "}";
-        System.out.println("时间"+enddate);
-        System.out.println(str);
+//        System.out.println("时间"+enddate);
+//        System.out.println(str);
         String url="https://cloud.hnjtbf.com/CustomerLogin/userlogin?go=buybaoxian";
         str=str.replace("OPENID", openid);
         str=str.replace("FIRST", "尊敬的車家网会员您好，您的爱车的"+type+"即将到期!");
-        str=str.replace("TEMPLATE_ID", "yae2FDAAb25faF6Mw_2zdpy2QPBxyS4OMtXUD596fEo");
+        str=str.replace("TEMPLATE_ID", "2ZE0sWerp6w5p60WcQBXjHIYjrWh6RsF76qp407EQmM");
         str=str.replace("KEYWORD1", number);
         str=str.replace("KEYWORD2", enddate);
         str=str.replace("REMARK", "点击申请保险续费，您提交工单后我们的工作人员会与您及时联系，感谢您的使用！");
@@ -92,12 +92,12 @@ public class reminddemo {
                 "\t\t}\n" +
                 "\t}\n" +
                 "}";
-        System.out.println("时间"+enddate);
-        System.out.println(str);
+//        System.out.println("时间"+enddate);
+//        System.out.println(str);
         String url="https://cloud.hnjtbf.com/CustomerLogin/userlogin";
         str=str.replace("OPENID", openid);
         str=str.replace("FIRST", "尊敬的車家网会员您好，您的驾照的即将到期!");
-        str=str.replace("TEMPLATE_ID", "xWJgUtSiJ9zZ4OCbmo8PDc1PpkU8dWPDk3K4DQnyoNY");
+        str=str.replace("TEMPLATE_ID", "3dOH7UTOBWDI244t86MzMfPV7riXK0HPfKwi4CfsBC0");
         str=str.replace("KEYWORD1", enddate);
         str=str.replace("KEYWORD2", name);
         str=str.replace("KEYWORD3", type);

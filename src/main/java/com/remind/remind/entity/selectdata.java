@@ -12,7 +12,7 @@ public class selectdata{
     Connection cnt=null;
     PreparedStatement ps=null;
     public static boolean cheliangnianshen(String StartDate, String EndDate) {
-        String sql="select openid,号牌号码,下次年检 from cars,customer where USER_FORM_INFO_FLAG_MOBILE=phone and 下次年检 is not null and 下次年检 between '"+StartDate+"' and '"+EndDate+"'";
+        String sql="select openid,号牌号码,下次年检 from cars,customer where USER_FORM_INFO_FLAG_MOBILE=phone and 下次年检 is not null and 下次年检 between '"+StartDate+"' and '"+EndDate+"' and 号牌号码 in (select 号牌号码 from remind where remmind_content='车辆年审提醒' and stauts='true')";
         rs= baseDao.ExecuteQuery(sql);
         try {
             int i=0;
@@ -36,7 +36,7 @@ public class selectdata{
     }
 
     public static boolean jiaoqiangxian(String StartDate, String EndDate) {
-        String sql="select openid,号牌号码,enddata from insurance,customer where insurance='交强险' and phone=USER_FORM_INFO_FLAG_MOBILE and enddata between '"+StartDate+"' and '"+EndDate+"' group by phone,openid,号牌号码,enddata";
+        String sql="select top 1 openid,号牌号码,enddata from insurance,customer where insurance='交强险' and phone=USER_FORM_INFO_FLAG_MOBILE and enddata between '"+StartDate+"' and '"+EndDate+"' and 号牌号码 in (select 号牌号码 from remind where remmind_content='保险到期提醒' and stauts='true') group by phone,openid,号牌号码,enddata order by enddata desc";
         rs= baseDao.ExecuteQuery(sql);
         try {
             int i=0;
@@ -59,8 +59,8 @@ public class selectdata{
         }
         return false;
     }
-    protected static boolean shangyexian(String StartDate, String EndDate) {
-        String sql="select openid,号牌号码,enddata from insurance,customer where insurance!='交强险' and phone=USER_FORM_INFO_FLAG_MOBILE and enddata between '"+StartDate+"' and '"+EndDate+"' group by phone,openid,号牌号码,enddata";
+    public static boolean shangyexian(String StartDate, String EndDate) {
+        String sql="select top 1 openid,号牌号码,enddata from insurance,customer where insurance!='交强险' and phone=USER_FORM_INFO_FLAG_MOBILE and enddata between '"+StartDate+"' and '"+EndDate+"' and 号牌号码 in (select 号牌号码 from remind where remmind_content='保险到期提醒' and stauts='true') group by phone,openid,号牌号码,enddata order by enddata desc";
         rs= baseDao.ExecuteQuery(sql);
         try {
             int i=0;
@@ -84,7 +84,7 @@ public class selectdata{
     }
 
     public static boolean jiazhaonianshen(String defaultStartDate, String defaultEndDate) {
-        String sql="select openid,准驾车型,有效期至,姓名,初次领证日期 from driving_licence,customer where phone=USER_FORM_INFO_FLAG_MOBILE and 有效期至 between '"+defaultStartDate+"' and '"+defaultEndDate+"'";
+        String sql="select openid,准驾车型,有效期至,姓名,初次领证日期 from driving_licence,customer where phone=USER_FORM_INFO_FLAG_MOBILE and 有效期至 between '"+defaultStartDate+"' and '"+defaultEndDate+"' and phone in (select phone from remind where remmind_content='驾照年审提醒' and stauts='true')";
         rs= baseDao.ExecuteQuery(sql);
         try {
             int i=0;
