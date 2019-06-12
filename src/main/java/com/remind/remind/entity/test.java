@@ -35,7 +35,7 @@ public class test extends selectdata {
         Date dBefore = new Date();
         Calendar calendar = Calendar.getInstance(); //得到日历
         calendar.setTime(dNow);//把当前时间赋给日历
-        calendar.add(Calendar.MONTH, -3);  //设置为前3月
+        calendar.add(Calendar.MONTH, 3);  //设置为前3月
         dBefore = calendar.getTime();   //得到前3月的时间
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy/MM"); //设置时间格式
         String defaultStartDate = sdf.format(dBefore);    //格式化前3月的时间
@@ -54,7 +54,7 @@ public class test extends selectdata {
         Date dBefore = new Date();
         Calendar calendar = Calendar.getInstance(); //得到日历
         calendar.setTime(dNow);//把当前时间赋给日历
-        calendar.add(Calendar.MONTH, -3);  //设置为前3月
+        calendar.add(Calendar.MONTH, 3);  //设置为前3月
         dBefore = calendar.getTime();   //得到前3月的时间
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd"); //设置时间格式
         String defaultStartDate = sdf.format(dBefore);    //格式化前3月的时间
@@ -78,7 +78,7 @@ public class test extends selectdata {
         Date dBefore = new Date();
         Calendar calendar = Calendar.getInstance(); //得到日历
         calendar.setTime(dNow);//把当前时间赋给日历
-        calendar.add(Calendar.MONTH, -3);  //设置为前3月
+        calendar.add(Calendar.MONTH, 3);  //设置为前3月
         dBefore = calendar.getTime();   //得到前3月的时间
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy/MM/dd"); //设置时间格式
         String defaultStartDate = sdf.format(dBefore);    //格式化前3月的时间
